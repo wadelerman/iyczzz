@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iycz/component/drawer_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -81,6 +82,7 @@ class _HomePageState extends State<HomePage> {
                   physics: const BouncingScrollPhysics(),
                   itemCount: 50,
                   itemBuilder: (context, index) {
+                    
                   },
                 ),
               ),
@@ -115,6 +117,18 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 80.0,
                 ),
+                DrawerItem(
+                  text: "Lagu",
+                  onTap: () {},
+                ),
+                DrawerItem(
+                  text: "Profile",
+                  onTap: () {},
+                ),
+                DrawerItem(
+                  text: "Sign Out",
+                  onTap: () {},
+                )
               ],
             ),
           ),
