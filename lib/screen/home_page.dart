@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iycz/component/drawer_item.dart';
 import 'package:iycz/component/music_item.dart';
+import 'package:iycz/temporary.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -152,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(
                                                       16.0),
-                                                  child: Text("test"),
+                                                  child: Text(musicLyrics),
                                                 ),
                                               ),
                                             ),
