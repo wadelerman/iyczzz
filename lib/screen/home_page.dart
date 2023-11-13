@@ -82,7 +82,87 @@ class _HomePageState extends State<HomePage> {
                   physics: const BouncingScrollPhysics(),
                   itemCount: 50,
                   itemBuilder: (context, index) {
-                    
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: MusicItem(
+                        image: "assets/ic_disc.png",
+                        musicName: "Music $index",
+                        artist: "Siapa kek",
+                        onTap: () {
+                          showModalBottomSheet(
+                              context: context,
+                              isScrollControlled: true,
+                              backgroundColor: Colors.transparent,
+                              builder: (context) {
+                                return DraggableScrollableSheet(
+                                    initialChildSize: 0.85,
+                                    maxChildSize: 0.85,
+                                    minChildSize: 0.85,
+                                    builder: (context, controller) {
+                                      return Container(
+                                        height: screenHeight * 0.85,
+                                        decoration: const BoxDecoration(
+                                          borderRadius: BorderRadius.vertical(
+                                            top: Radius.circular(70.0),
+                                          ),
+                                          color: Color.fromARGB(
+                                              255, 242, 242, 242),
+                                        ),
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                              width: 40,
+                                              height: 5,
+                                              margin:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 8.0),
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius:
+                                                    BorderRadius.circular(2.5),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: 8.0,
+                                            ),
+                                            Text(
+                                              "Music $index",
+                                              style: const TextStyle(
+                                                  fontSize: 24.0,
+                                                  color: Colors.black),
+                                            ),
+                                            const SizedBox(
+                                              height: 8.0,
+                                            ),
+                                            const Text(
+                                              "Siapa kek",
+                                              style: TextStyle(
+                                                  fontSize: 12.0,
+                                                  color: Colors.grey),
+                                            ),
+                                            const SizedBox(
+                                              height: 12.0,
+                                            ),
+                                            Expanded(
+                                              child: SingleChildScrollView(
+                                                physics:
+                                                    const BouncingScrollPhysics(),
+                                                controller: controller,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.all(
+                                                      16.0),
+                                                  child: Text("test"),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    });
+                              });
+                        },
+                      ),
+                    );
                   },
                 ),
               ),
